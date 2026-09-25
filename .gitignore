@@ -1,0 +1,12 @@
+# Python/Streamlit
+__pycache__/
+*.py[cod]
+.env
+.streamlit/
+
+# Generated Data files
+*.csv
+*.jsonl
+
+# Temporary files from uploads
+temp_*

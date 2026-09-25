@@ -1,0 +1,7 @@
+streamlit
+pandas
+litellm
+langchain
+langchain_community
+pypdf
+tenacity
