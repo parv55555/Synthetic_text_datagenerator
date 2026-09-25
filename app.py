@@ -14,36 +14,104 @@ st.set_page_config(page_title="Synthetic Text Data Generator", layout="wide")
 
 st.markdown("""
 <style>
-    /* Premium dark aesthetic */
-    .stApp {
-        background-color: #0E1117;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+    /* Global Typography & Hide Defaults */
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif !important;
     }
-    /* Stylish buttons */
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    
+    /* Background & Main App */
+    .stApp {
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        color: #f8fafc;
+    }
+
+    /* Sidebar Aesthetic */
+    [data-testid="stSidebar"] {
+        background-color: rgba(15, 23, 42, 0.6) !important;
+        backdrop-filter: blur(12px) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Gradient Buttons */
     .stButton>button {
-        background: linear-gradient(135deg, #FF4B4B 0%, #FF8F8F 100%);
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         color: white;
-        border-radius: 8px;
+        border-radius: 12px;
         border: none;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
+        padding: 0.6rem 1.2rem;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         font-weight: 600;
+        letter-spacing: 0.5px;
     }
     .stButton>button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(255,75,75,0.3);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+        background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
     }
+
+    /* Glassmorphism Metrics */
+    [data-testid="stMetricValue"] {
+        font-weight: 800 !important;
+        color: #f8fafc !important;
+        font-size: 2.2rem !important;
+    }
+    [data-testid="stMetricLabel"] {
+        font-weight: 600 !important;
+        color: #94a3b8 !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.85rem !important;
+    }
+    [data-testid="metric-container"] {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        transition: transform 0.3s ease;
+    }
+    [data-testid="metric-container"]:hover {
+        transform: translateY(-5px);
+        border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    /* Titles */
     .main-title {
         text-align: center;
-        color: #FF4B4B;
-        font-size: 3rem;
+        background: linear-gradient(to right, #6366f1, #d946ef);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.5rem;
         font-weight: 800;
         margin-bottom: 0px;
+        letter-spacing: -1px;
     }
     .sub-title {
         text-align: center;
-        color: #A0AEC0;
+        color: #94a3b8;
         font-size: 1.2rem;
-        margin-bottom: 30px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Inputs & Textareas */
+    .stTextInput>div>div>input, .stTextArea>div>textarea {
+        background-color: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #f8fafc !important;
+        border-radius: 8px !important;
+    }
+    .stTextInput>div>div>input:focus, .stTextArea>div>textarea:focus {
+        border-color: #a855f7 !important;
+        box-shadow: 0 0 0 1px #a855f7 !important;
     }
 </style>
 """, unsafe_allow_html=True)
