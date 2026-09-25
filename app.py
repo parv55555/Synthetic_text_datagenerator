@@ -32,9 +32,17 @@ st.markdown("""
 
     /* Sidebar Aesthetic */
     [data-testid="stSidebar"] {
-        background-color: rgba(15, 23, 42, 0.6) !important;
+        background-color: rgba(15, 23, 42, 0.8) !important;
         backdrop-filter: blur(12px) !important;
         border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Force Text Colors to be Light */
+    .stApp p, .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6, .stApp label, .stApp span, .stApp div {
+        color: #f8fafc;
+    }
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+        color: #f8fafc !important;
     }
 
     /* Gradient Buttons */
