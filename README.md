@@ -16,7 +16,7 @@ Instead of relying on fragile regex or manual prompt engineering for formatting,
 - **🎭 Diversity & Persona Injection**: Automatically injects dynamic personas and randomized tones into every prompt, maximizing dataset entropy and preventing the LLM from generating repetitive patterns.
 - **BYOK Multi-Provider Architecture**: Powered by `litellm`, seamlessly switch between **OpenAI, Anthropic, Google Gemini, Groq, Mistral, and Together AI** without changing any code.
 - **Strict Schema Adherence & RAG Architecture**: Upload your schema definition via PDF or TXT. The pipeline acts as a robust Retrieval-Augmented Generation (RAG) system, bypassing simplistic chunking and dynamically injecting the full retrieved document as context to strictly enforce valid structured JSON outputs.
-- **🎓 Advanced LLM-as-a-Judge**: Rejects simple pass/fail mechanics. The evaluator strictly grades generation on a 1-5 scale, enforces a passing threshold (>=4), and records detailed reasoning traces for why data succeeded or failed.
+- **🎓 Advanced LLM-as-a-Judge & Quality Metrics**: Rejects simple pass/fail mechanics. The evaluator strictly grades generation on a 1-5 scale, enforces a passing threshold (>=4), and displays the final **Average Quality Score** directly on the dashboard alongside reasoning traces.
 - **💰 Live Cost & Token Analytics**: Integrates real-time LiteLLM cost tracking, summarizing total fraction-of-a-cent API spend per session on the dashboard.
 - **💾 MLOps Ready Exports**: Output instantly as `CSV`, `JSONL`, or utilize the native **SQLite Database Export** to seamlessly append data directly to your local SQL tables for training pipelines.
 

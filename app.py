@@ -251,7 +251,7 @@ if generate_btn:
         df = pd.DataFrame(generated_data_local)
         
         # Show some quick metrics
-        m1, m2, m3 = st.columns(3)
+        m1, m2, m3, m4 = st.columns(4)
         m1.metric("Total Generated", len(generated_data_local))
         if attempts > 0:
             success_rate = (len(generated_data_local) / max(1, attempts)) * 100
@@ -260,6 +260,9 @@ if generate_btn:
             rate_str = "0%"
         m2.metric("Success Rate", rate_str)
         m3.metric("Total Pipeline Cost", f"${total_pipeline_cost:.4f}")
+        
+        avg_score = df["eval_score"].mean() if "eval_score" in df.columns else 0.0
+        m4.metric("Avg Quality Score", f"{avg_score:.2f} / 5.0")
         
         st.dataframe(df, use_container_width=True)
         
