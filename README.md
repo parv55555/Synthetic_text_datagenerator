@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 Structured Synthetic Data Generator</h1>
+  <h1>🚀 RAG based synthetic data generator</h1>
   <p>An autonomous, multi-agent pipeline for generating high-fidelity, schema-compliant synthetic datasets using LLM-as-a-judge quality gating.</p>
 </div>
 
